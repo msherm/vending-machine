@@ -1,0 +1,2 @@
+//Actions
+export const ADD_VENDING_MACHINE = 'ADD_VENDING_MACHINE';
