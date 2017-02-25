@@ -5,7 +5,7 @@ import machinesReducer from './machines-reducer';
 
 // Combine Reducers
 var reducers = combineReducers({
-		machines: machinesReducer
+		machinesState: machinesReducer
 });
 
 export default reducers;

@@ -5,3 +5,28 @@ export const addVendingMachine = () => {
     type: types.ADD_VENDING_MACHINE
   };
 }
+
+export const addRow = (machineIndex) => {
+  return {
+    type: types.ADD_ROW,
+    machineIndex
+  };
+}
+
+export const addColumn = (machineIndex, rowIndex) => {
+  return {
+    type: types.ADD_COLUMN
+  };
+}
+
+export const addSlot = (machineIndex, rowIndex, columnIndex) => {
+  return {
+    type: types.ADD_SLOT
+  };
+}
+
+export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+  return {
+    type: types.ADD_PRODUCT
+  };
+}
