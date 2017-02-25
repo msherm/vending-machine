@@ -16,13 +16,13 @@ const Machine = (props) => {
 	});
 
   return (
-    <div className="machine">
+    <li className="machine">
     	<h2>Machine { props.machineIndex + 1 }</h2>
     	<button className="add-row-button" onClick={ addRow }>Add Row</button>
     	<ul className="rows">
     		{ rows }
     	</ul>
-    </div>
+    </li>
   );
 }
 
