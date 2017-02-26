@@ -94,13 +94,10 @@ export const selectTargetSlot = (machineIndex, rowIndex, columnIndex, slotIndex)
   };
 }
 
-export const addProductToSlot = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
+export const addProductToSlot = (machineIndex, productId) => {
   return {
     type: types.ADD_PRODUCT_TO_SLOT,
     machineIndex,
-    rowIndex,
-    columnIndex,
-    slotIndex,
     productId
   };
 }

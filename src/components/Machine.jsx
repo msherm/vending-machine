@@ -23,12 +23,11 @@ const Machine = (props) => {
 								addSlot={ props.addSlot }
 								removeSlot={ props.removeSlot }
 								selectTargetSlot={ props.selectTargetSlot }
-								addProductToSlot={ props.addProductToSlot }
 								removeProductFromSlot={ props.removeProductFromSlot }/>
 	});
 
 	const purchasedProducts = props.purchasedProducts.length ? props.purchasedProducts.map((product, i) => <li key={ i } className="product">product</li>) : <div>Empty</div>;
-	const productStocker = props.selectionPanelVisible ? <div><h3>Product Stocker</h3><ProductList products={ props.products }/></div> : null;
+	const productStocker = props.selectionPanelVisible ? <div><h3>Product Stocker</h3><ProductList machineIndex={ props.machineIndex } targetSlot={ props.targetSlot } products={ props.products } addProductToSlot={ props.addProductToSlot }/></div> : null;
 
   return (
     <li className="machine">

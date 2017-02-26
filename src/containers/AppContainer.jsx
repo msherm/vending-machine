@@ -69,8 +69,8 @@ const mapDispatchToProps = function(dispatch) {
     handleSelectTargetSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
       dispatch(selectTargetSlot(machineIndex, rowIndex, columnIndex, slotIndex));
     },
-    handleAddProductToSlot: (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
-      dispatch(addProductToSlot(machineIndex, rowIndex, columnIndex, slotIndex, productId));
+    handleAddProductToSlot: (machineIndex, productId) => {
+      dispatch(addProductToSlot(machineIndex, productId));
     },
     handleRemoveProductFromSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
       dispatch(removeProductFromSlot(machineIndex, rowIndex, columnIndex, slotIndex));

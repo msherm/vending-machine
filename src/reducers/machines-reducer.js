@@ -45,8 +45,8 @@ const machinesReducer = function(state = initialState, action) {
       machines[action.machineIndex].targetSlot = [action.machineIndex, action.rowIndex, action.columnIndex, action.slotIndex];
       return Object.assign({}, state, { machines: machines });
     case ADD_PRODUCT_TO_SLOT:
-      //add product at machines[machineIndex][rowIndex][columnIndex][slotIndex]
-      machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots[action.slotIndex] = action.productId;
+      //add product at machines[machineIndex][targetSlot - rowIndex][targetSlot - columnIndex][targetSlot - slotIndex]
+      machines[action.machineIndex].rows[machines[action.machineIndex].targetSlot[1]].columns[machines[action.machineIndex].targetSlot[2]].slots[machines[action.machineIndex].targetSlot[3]] = action.productId;
       return Object.assign({}, state, { machines: machines });
     case REMOVE_PRODUCT_FROM_SLOT:
       machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots[action.slotIndex] = 0;
