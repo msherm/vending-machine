@@ -1,4 +1,4 @@
-import { ADD_VENDING_MACHINE, REMOVE_VENDING_MACHINE, ADD_ROW, REMOVE_ROW, ADD_COLUMN, REMOVE_COLUMN, ADD_SLOT, REMOVE_SLOT, ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/action-types';
+import { ADD_VENDING_MACHINE, REMOVE_VENDING_MACHINE, ADD_ROW, REMOVE_ROW, ADD_COLUMN, REMOVE_COLUMN, ADD_SLOT, REMOVE_SLOT, ADD_PRODUCT_TO_SLOT, REMOVE_PRODUCT_FROM_SLOT } from '../actions/action-types';
 
 const initialState = {
   machines: []
@@ -33,11 +33,11 @@ const machinesReducer = function(state = initialState, action) {
     case REMOVE_SLOT:
       machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots = [...machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots.slice(0, action.slotIndex), ...machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots.slice(action.slotIndex + 1)];
       return Object.assign({}, state, { machines: machines });
-    case ADD_PRODUCT:
+    case ADD_PRODUCT_TO_SLOT:
       //add product at machines[machineIndex][rowIndex][columnIndex][slotIndex]
       machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots[action.slotIndex] = action.productId;
       return Object.assign({}, state, { machines: machines });
-    case REMOVE_PRODUCT:
+    case REMOVE_PRODUCT_FROM_SLOT:
       machines[action.machineIndex].rows[action.rowIndex].columns[action.columnIndex].slots[action.slotIndex] = 0;
       return Object.assign({}, state, { machines: machines });
   }

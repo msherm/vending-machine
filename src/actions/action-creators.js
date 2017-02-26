@@ -1,5 +1,11 @@
 import * as types from './action-types';
 
+//Product
+export const addProductToSlotStock = (product) => {
+
+}
+
+//Machine
 export const addVendingMachine = () => {
   return {
     type: types.ADD_VENDING_MACHINE
@@ -64,9 +70,9 @@ export const removeSlot = (machineIndex, rowIndex, columnIndex, slotIndex) => {
   };
 }
 
-export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
+export const addProductToSlot = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
   return {
-    type: types.ADD_PRODUCT,
+    type: types.ADD_PRODUCT_TO_SLOT,
     machineIndex,
     rowIndex,
     columnIndex,
@@ -75,9 +81,9 @@ export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex, produ
   };
 }
 
-export const removeProduct = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+export const removeProductFromSlot = (machineIndex, rowIndex, columnIndex, slotIndex) => {
   return {
-    type: types.REMOVE_PRODUCT,
+    type: types.REMOVE_PRODUCT_FROM_SLOT,
     machineIndex,
     rowIndex,
     columnIndex,

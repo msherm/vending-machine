@@ -19,8 +19,8 @@ const Row = (props) => {
                    removeColumn={ props.removeColumn }
                    addSlot={ props.addSlot }
                    removeSlot={ props.removeSlot }
-                   addProduct={ props.addProduct }
-                   removeProduct={ props.removeProduct }/>
+                   addProductToSlot={ props.addProductToSlot }
+                   removeProductFromSlot={ props.removeProductFromSlot }/>
 	});
 
   return (

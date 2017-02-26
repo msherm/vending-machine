@@ -20,8 +20,8 @@ const Machine = (props) => {
 								removeColumn={ props.removeColumn }
 								addSlot={ props.addSlot }
 								removeSlot={ props.removeSlot }
-								addProduct={ props.addProduct }
-								removeProduct={ props.removeProduct }/>
+								addProductToSlot={ props.addProductToSlot }
+								removeProductFromSlot={ props.removeProductFromSlot }/>
 	});
 
 	const purchasedProducts = props.purchasedProducts.length ? props.purchasedProducts.map((product, i) => <li key={ i } className="product">product</li>) : <div>Empty</div>;

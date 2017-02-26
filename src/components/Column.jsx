@@ -18,8 +18,8 @@ const Column = (props) => {
                  columnIndex={ props.columnIndex }
                  productId={ productId }
                  removeSlot={ props.removeSlot }
-                 addProduct={ props.addProduct }
-                 removeProduct={ props.removeProduct }/>
+                 addProductToSlot={ props.addProductToSlot }
+                 removeProductFromSlot={ props.removeProductFromSlot }/>
 	});
 
   return (

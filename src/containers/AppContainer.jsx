@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import App from '../components/App.jsx';
 import store from '../store';
 
-import { addVendingMachine, removeVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, addProduct, removeProduct } from '../actions/action-creators.js';
+import { addVendingMachine, removeVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, addProductToSlot, removeProductFromSlot } from '../actions/action-creators.js';
 
 class AppContainer extends React.Component {
   render() {
     return (
-      <App machines={ this.props.machines }
+      <App products={ this.props.products }
+           machines={ this.props.machines }
            addVendingMachine={ this.props.handleAddVendingMachine }
            removeVendingMachine={ this.props.handleRemoveVendingMachine }
            addRow={ this.props.handleAddRow }
@@ -17,14 +18,15 @@ class AppContainer extends React.Component {
            removeColumn={ this.props.handleRemoveColumn }
            addSlot={ this.props.handleAddSlot }
            removeSlot={ this.props.handleRemoveSlot }
-           addProduct={ this.props.handleAddProduct }
-           removeProduct={ this.props.handleRemoveProduct }/>
+           addProductToSlot={ this.props.handleAddProductToSlot }
+           removeProductFromSlot={ this.props.handleRemoveProductFromSlot }/>
     );
   }
 }
 
 const mapStateToProps = function(store) {
   return {
+    products: store.productsState.products,
     machines: store.machinesState.machines
   };
 }
@@ -55,11 +57,11 @@ const mapDispatchToProps = function(dispatch) {
     handleRemoveSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
       dispatch(removeSlot(machineIndex, rowIndex, columnIndex, slotIndex));
     },
-    handleAddProduct: (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
-      dispatch(addProduct(machineIndex, rowIndex, columnIndex, slotIndex, productId));
+    handleAddProductToSlot: (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
+      dispatch(addProductToSlot(machineIndex, rowIndex, columnIndex, slotIndex, productId));
     },
-    handleRemoveProduct: (machineIndex, rowIndex, columnIndex, slotIndex) => {
-      dispatch(removeProduct(machineIndex, rowIndex, columnIndex, slotIndex));
+    handleRemoveProductFromSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
+      dispatch(removeProductFromSlot(machineIndex, rowIndex, columnIndex, slotIndex));
     }
   };
 }
