@@ -11,9 +11,13 @@ const Machine = (props) => {
 								rowIndex={ i }
 								machineIndex={ props.machineIndex }
 								columns={ rowData.columns }
+								removeRow={ props.removeRow }
 								addColumn={ props.addColumn }
+								removeColumn={ props.removeColumn }
 								addSlot={ props.addSlot }
-								addProduct={ props.addProduct }/>
+								removeSlot={ props.removeSlot }
+								addProduct={ props.addProduct }
+								removeProduct={ props.removeProduct }/>
 	});
 
   return (

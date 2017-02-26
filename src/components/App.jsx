@@ -15,9 +15,13 @@ class App extends React.Component {
   										machineIndex={ i }
   										rows={ machineData.rows }
   										addRow={ this.props.addRow }
+                      removeRow={ this.props.removeRow }
   										addColumn={ this.props.addColumn }
+                      removeColumn={ this.props.removeColumn }
   										addSlot={ this.props.addSlot }
-  										addProduct={ this.props.addProduct }/>
+                      removeSlot={ this.props.removeSlot }
+  										addProduct={ this.props.addProduct }
+                      removeProduct={ this.props.removeProduct }/>
   	});
 
     return (

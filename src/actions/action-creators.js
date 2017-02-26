@@ -13,11 +13,28 @@ export const addRow = (machineIndex) => {
   };
 }
 
+export const removeRow = (machineIndex, rowIndex) => {
+  return {
+    type: types.REMOVE_ROW,
+    machineIndex,
+    rowIndex
+  };
+}
+
 export const addColumn = (machineIndex, rowIndex) => {
   return {
     type: types.ADD_COLUMN,
     machineIndex, 
     rowIndex
+  };
+}
+
+export const removeColumn = (machineIndex, rowIndex, columnIndex) => {
+  return {
+    type: types.REMOVE_COLUMN,
+    machineIndex,
+    rowIndex,
+    columnIndex
   };
 }
 
@@ -30,6 +47,16 @@ export const addSlot = (machineIndex, rowIndex, columnIndex) => {
   };
 }
 
+export const removeSlot = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+  return {
+    type: types.REMOVE_SLOT,
+    machineIndex,
+    rowIndex,
+    columnIndex,
+    slotIndex
+  };
+}
+
 export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
   return {
     type: types.ADD_PRODUCT,
@@ -38,5 +65,15 @@ export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex, produ
     columnIndex,
     slotIndex,
     productId
+  };
+}
+
+export const removeProduct = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+  return {
+    type: types.REMOVE_PRODUCT,
+    machineIndex,
+    rowIndex,
+    columnIndex,
+    slotIndex
   };
 }

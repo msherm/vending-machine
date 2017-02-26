@@ -2,6 +2,10 @@ import React, { PropTypes } from 'react';
 import Column from './Column.jsx';
 
 const Row = (props) => {
+  const removeRow = () => {
+    props.removeRow(props.machineIndex, props.rowIndex);
+  }
+
   const addColumn = () => {
     props.addColumn(props.machineIndex, props.rowIndex);
   }
@@ -12,12 +16,17 @@ const Row = (props) => {
                    machineIndex={ props.machineIndex }
                    rowIndex={ props.rowIndex }
                    slots={ columnData.slots }
+                   removeColumn={ props.removeColumn }
                    addSlot={ props.addSlot }
-                   addProduct={ props.addProduct }/>
+                   removeSlot={ props.removeSlot }
+                   addProduct={ props.addProduct }
+                   removeProduct={ props.removeProduct }/>
 	});
 
   return (
     <li className="row">
+      <h3>Row { props.rowIndex + 1 }</h3>
+      <button className="remove-row-button" onClick={ removeRow }>Remove Row</button>
     	<button className="add-column-button" onClick={ addColumn }>Add Column</button>
     	<ul className="columns">
     		{ columns }
