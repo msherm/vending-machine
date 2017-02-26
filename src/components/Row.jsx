@@ -16,9 +16,11 @@ const Row = (props) => {
                    machineIndex={ props.machineIndex }
                    rowIndex={ props.rowIndex }
                    slots={ columnData.slots }
+                   targetSlot={ props.targetSlot }
                    removeColumn={ props.removeColumn }
                    addSlot={ props.addSlot }
                    removeSlot={ props.removeSlot }
+                   selectTargetSlot={ props.selectTargetSlot }
                    addProductToSlot={ props.addProductToSlot }
                    removeProductFromSlot={ props.removeProductFromSlot }/>
 	});

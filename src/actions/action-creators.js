@@ -70,6 +70,30 @@ export const removeSlot = (machineIndex, rowIndex, columnIndex, slotIndex) => {
   };
 }
 
+export const showProductSelectionPanel = (machineIndex) => {
+  return {
+    type: types.SHOW_PRODUCT_SELECTION_PANEL,
+    machineIndex
+  };
+}
+
+export const hideProductSelectionPanel = (machineIndex) => {
+  return {
+    type: types.HIDE_PRODUCT_SELECTION_PANEL,
+    machineIndex
+  };
+}
+
+export const selectTargetSlot = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+  return {
+    type: types.SELECT_TARGET_SLOT,
+    machineIndex,
+    rowIndex,
+    columnIndex,
+    slotIndex
+  };
+}
+
 export const addProductToSlot = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
   return {
     type: types.ADD_PRODUCT_TO_SLOT,

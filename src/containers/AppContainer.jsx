@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import App from '../components/App.jsx';
 import store from '../store';
 
-import { addVendingMachine, removeVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, addProductToSlot, removeProductFromSlot } from '../actions/action-creators.js';
+import { addVendingMachine, removeVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, showProductSelectionPanel, hideProductSelectionPanel, selectTargetSlot, addProductToSlot, removeProductFromSlot } from '../actions/action-creators.js';
 
 class AppContainer extends React.Component {
   render() {
@@ -18,6 +18,9 @@ class AppContainer extends React.Component {
            removeColumn={ this.props.handleRemoveColumn }
            addSlot={ this.props.handleAddSlot }
            removeSlot={ this.props.handleRemoveSlot }
+           showProductSelectionPanel={ this.props.handleShowProductSelectionPanel }
+           hideProductSelectionPanel={ this.props.handleHideideProductSelectionPanel }
+           selectTargetSlot={ this.props.handleSelectTargetSlot }
            addProductToSlot={ this.props.handleAddProductToSlot }
            removeProductFromSlot={ this.props.handleRemoveProductFromSlot }/>
     );
@@ -56,6 +59,15 @@ const mapDispatchToProps = function(dispatch) {
     },
     handleRemoveSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
       dispatch(removeSlot(machineIndex, rowIndex, columnIndex, slotIndex));
+    },
+    handleShowProductSelectionPanel: (machineIndex) => {
+      dispatch(showProductSelectionPanel(machineIndex));
+    },
+    handleHideProductSelectionPanel: (machineIndex) => {
+      dispatch(hideProductSelectionPanel(machineIndex));
+    },
+    handleSelectTargetSlot: (machineIndex, rowIndex, columnIndex, slotIndex) => {
+      dispatch(selectTargetSlot(machineIndex, rowIndex, columnIndex, slotIndex));
     },
     handleAddProductToSlot: (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
       dispatch(addProductToSlot(machineIndex, rowIndex, columnIndex, slotIndex, productId));

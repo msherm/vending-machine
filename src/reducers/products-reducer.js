@@ -4,27 +4,33 @@ const initialState = {
   products: [
   	{
   		name: "Snickers",
-  		price: 1.5
+  		price: 1.5,
+  		stock: 7
   	},
   	{
   		name: "Twix",
-  		price: 1.2
+  		price: 1.2,
+  		stock: 6
   	},
   	{
   		name: "Chex Mix",
-  		price: 2.22
+  		price: 2.22,
+  		stock: 5
   	},
   	{
   		name: "Cheetos",
-  		price: 1.75
+  		price: 1.75,
+  		stock: 4
   	},
   	{
   		name: "Lifesavers",
-  		price: 1.15
+  		price: 1.15,
+  		stock: 3
   	},
   	{
   		name: "Orbit: Sweet Mint",
-  		price: 2.5
+  		price: 2.5,
+  		stock: 2
   	}
   ]
 };

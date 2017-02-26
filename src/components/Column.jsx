@@ -11,13 +11,16 @@ const Column = (props) => {
   }
 
 	const slots = props.slots.map((productId, i) => {
+    const slotTargeted = (props.targetSlot && props.targetSlot[0] === props.machineIndex && props.targetSlot[1] === props.rowIndex && props.targetSlot[2] === props.columnIndex && props.targetSlot[3] === i) ? true : false;
 		return <Slot key={ i }
                  slotIndex={ i }
                  machineIndex={ props.machineIndex }
                  rowIndex={ props.rowIndex }
                  columnIndex={ props.columnIndex }
                  productId={ productId }
+                 slotTargeted={ slotTargeted }
                  removeSlot={ props.removeSlot }
+                 selectTargetSlot={ props.selectTargetSlot }
                  addProductToSlot={ props.addProductToSlot }
                  removeProductFromSlot={ props.removeProductFromSlot }/>
 	});
