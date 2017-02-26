@@ -6,6 +6,13 @@ export const addVendingMachine = () => {
   };
 }
 
+export const removeVendingMachine = (machineIndex) => {
+  return {
+    type: types.REMOVE_VENDING_MACHINE,
+    machineIndex
+  };
+}
+
 export const addRow = (machineIndex) => {
   return {
     type: types.ADD_ROW,

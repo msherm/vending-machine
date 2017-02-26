@@ -2,6 +2,10 @@ import React, { PropTypes } from 'react';
 import Row from './Row.jsx';
 
 const Machine = (props) => {
+  const removeVendingMachine = () => {
+    props.removeVendingMachine(props.machineIndex);
+  }
+
 	const addRow = () => {
 		props.addRow(props.machineIndex);
 	}
@@ -23,6 +27,7 @@ const Machine = (props) => {
   return (
     <li className="machine">
     	<h2>Machine { props.machineIndex + 1 }</h2>
+      <button className="remove-machine-button" onClick={ removeVendingMachine }>Remove Machine</button>
     	<button className="add-row-button" onClick={ addRow }>Add Row</button>
     	<ul className="rows">
     		{ rows }

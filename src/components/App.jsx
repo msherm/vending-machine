@@ -14,6 +14,7 @@ class App extends React.Component {
   		return <Machine key={ i }
   										machineIndex={ i }
   										rows={ machineData.rows }
+                      removeVendingMachine={ this.props.removeVendingMachine }
   										addRow={ this.props.addRow }
                       removeRow={ this.props.removeRow }
   										addColumn={ this.props.addColumn }

@@ -1,4 +1,4 @@
-import { ADD_VENDING_MACHINE, ADD_ROW, REMOVE_ROW, ADD_COLUMN, REMOVE_COLUMN, ADD_SLOT, REMOVE_SLOT, ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/action-types';
+import { ADD_VENDING_MACHINE, REMOVE_VENDING_MACHINE, ADD_ROW, REMOVE_ROW, ADD_COLUMN, REMOVE_COLUMN, ADD_SLOT, REMOVE_SLOT, ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/action-types';
 
 const initialState = {
   machines: []
@@ -10,6 +10,8 @@ const machinesReducer = function(state = initialState, action) {
     case ADD_VENDING_MACHINE:
       machines.push({ rows: [] });
       return Object.assign({}, state, { machines: machines });
+    case REMOVE_VENDING_MACHINE:
+      return Object.assign({}, state, { machines: [...machines.slice(0, action.machineIndex), ...machines.slice(action.machineIndex + 1)] });
     case ADD_ROW:
       //add row at machines[machineIndex]
       machines[action.machineIndex].rows.push({ columns: [] });

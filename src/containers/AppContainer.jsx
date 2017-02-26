@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import App from '../components/App.jsx';
 import store from '../store';
 
-import { addVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, addProduct, removeProduct } from '../actions/action-creators.js';
+import { addVendingMachine, removeVendingMachine, addRow, removeRow, addColumn, removeColumn, addSlot, removeSlot, addProduct, removeProduct } from '../actions/action-creators.js';
 
 class AppContainer extends React.Component {
   render() {
     return (
       <App machines={ this.props.machines }
            addVendingMachine={ this.props.handleAddVendingMachine }
+           removeVendingMachine={ this.props.handleRemoveVendingMachine }
            addRow={ this.props.handleAddRow }
            removeRow={ this.props.handleRemoveRow }
            addColumn={ this.props.handleAddColumn }
@@ -32,6 +33,9 @@ const mapDispatchToProps = function(dispatch) {
   return {
     handleAddVendingMachine: () => {
       dispatch(addVendingMachine());
+    },
+    handleRemoveVendingMachine: (machineIndex) => {
+      dispatch(removeVendingMachine(machineIndex));
     },
     handleAddRow: (machineIndex) => {
       dispatch(addRow(machineIndex));

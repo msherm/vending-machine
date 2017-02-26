@@ -1,5 +1,6 @@
 //Actions
 export const ADD_VENDING_MACHINE = 'ADD_VENDING_MACHINE';
+export const REMOVE_VENDING_MACHINE = 'REMOVE_VENDING_MACHINE';
 export const ADD_ROW = 'ADD_ROW';
 export const REMOVE_ROW = 'REMOVE_ROW';
 export const ADD_COLUMN = 'ADD_COLUMN';
