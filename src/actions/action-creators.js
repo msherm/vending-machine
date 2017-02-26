@@ -15,18 +15,28 @@ export const addRow = (machineIndex) => {
 
 export const addColumn = (machineIndex, rowIndex) => {
   return {
-    type: types.ADD_COLUMN
+    type: types.ADD_COLUMN,
+    machineIndex, 
+    rowIndex
   };
 }
 
 export const addSlot = (machineIndex, rowIndex, columnIndex) => {
   return {
-    type: types.ADD_SLOT
+    type: types.ADD_SLOT,
+    machineIndex,
+    rowIndex,
+    columnIndex
   };
 }
 
-export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex) => {
+export const addProduct = (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
   return {
-    type: types.ADD_PRODUCT
+    type: types.ADD_PRODUCT,
+    machineIndex,
+    rowIndex,
+    columnIndex,
+    slotIndex,
+    productId
   };
 }

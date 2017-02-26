@@ -2,10 +2,16 @@ import React, { PropTypes } from 'react';
 import Column from './Column.jsx';
 
 const Row = (props) => {
-	const columns = this.props.columns.map((columnData, i) => {
+  const addColumn = () => {
+    props.addColumn(props.machineIndex, props.rowIndex);
+  }
+
+	const columns = props.columns.map((columnData, i) => {
 		return <Column key={ i }
                    columnIndex={ i }
-                   columnData={ columnData }
+                   machineIndex={ props.machineIndex }
+                   rowIndex={ props.rowIndex }
+                   slots={ columnData.slots }
                    addSlot={ props.addSlot }
                    addProduct={ props.addProduct }/>
 	});

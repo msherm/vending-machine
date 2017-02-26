@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import App from '../components/App.jsx';
 import store from '../store';
 
-import { addVendingMachine, addRow, addColumn, addSlot } from '../actions/action-creators.js';
+import { addVendingMachine, addRow, addColumn, addSlot, addProduct } from '../actions/action-creators.js';
 
 class AppContainer extends React.Component {
   render() {
@@ -39,14 +39,14 @@ const mapDispatchToProps = function(dispatch) {
     handleAddRow: (machineIndex) => {
       dispatch(addRow(machineIndex));
     },
-    handleAddColumn: (data) => {
-      dispatch(addColumn(data[0], data[1]));
+    handleAddColumn: (machineIndex, rowIndex) => {
+      dispatch(addColumn(machineIndex, rowIndex));
     },
-    handleAddSlot: (data) => {
-      dispatch(addSlot(data[0], data[1], data[2]));
+    handleAddSlot: (machineIndex, rowIndex, columnIndex) => {
+      dispatch(addSlot(machineIndex, rowIndex, columnIndex));
     },
-    handleAddProduct: (data) => {
-      dispatch(addSlot(data[0], data[1], data[2], data[3], data[4]));
+    handleAddProduct: (machineIndex, rowIndex, columnIndex, slotIndex, productId) => {
+      dispatch(addProduct(machineIndex, rowIndex, columnIndex, slotIndex, productId));
     }
   };
 }

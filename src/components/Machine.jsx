@@ -9,7 +9,8 @@ const Machine = (props) => {
 	const rows = props.rows.map((rowData, i) => {
 		return <Row key={ i }
 								rowIndex={ i }
-								rowData={ rowData }
+								machineIndex={ props.machineIndex }
+								columns={ rowData.columns }
 								addColumn={ props.addColumn }
 								addSlot={ props.addSlot }
 								addProduct={ props.addProduct }/>
