@@ -24,14 +24,21 @@ const Machine = (props) => {
 								removeProduct={ props.removeProduct }/>
 	});
 
+	const purchasedProducts = props.purchasedProducts.length ? props.purchasedProducts.map((product, i) => <li key={ i } className="product">product</li>) : <div>Empty</div>;
+
   return (
     <li className="machine">
-    	<h2>Machine { props.machineIndex + 1 }</h2>
+    	<div className="machine-mode">{ props.mode }</div>
+    	<h2>{ props.name } ({ props.machineIndex + 1 })</h2>
       <button className="remove-machine-button" onClick={ removeVendingMachine }>Remove Machine</button>
     	<button className="add-row-button" onClick={ addRow }>Add Row</button>
     	<ul className="rows">
     		{ rows }
     	</ul>
+    	<ul className="product-catch">
+    		{ purchasedProducts }
+    	</ul>
+    	<button className="take-items-button">Take Purchased Items</button>
     </li>
   );
 }

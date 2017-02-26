@@ -13,7 +13,10 @@ class App extends React.Component {
   	const machines = this.props.machines.map((machineData, i) => {
   		return <Machine key={ i }
   										machineIndex={ i }
+                      name={ machineData.name }
+                      mode={ machineData.mode }
   										rows={ machineData.rows }
+                      purchasedProducts={ machineData.purchasedProducts }
                       removeVendingMachine={ this.props.removeVendingMachine }
   										addRow={ this.props.addRow }
                       removeRow={ this.props.removeRow }

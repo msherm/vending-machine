@@ -30,6 +30,7 @@ const Column = (props) => {
     	<ul className="slots">
     		{ slots }
     	</ul>
+      <button className="purchase-button">Purchase</button>
     </li>
   );
 }

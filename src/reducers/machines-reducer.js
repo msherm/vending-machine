@@ -8,7 +8,7 @@ const machinesReducer = function(state = initialState, action) {
   const machines = state.machines.slice();
   switch(action.type) {
     case ADD_VENDING_MACHINE:
-      machines.push({ rows: [] });
+      machines.push({ name: 'Vending Machine', mode: 'stock', rows: [], purchasedProducts: [] });
       return Object.assign({}, state, { machines: machines });
     case REMOVE_VENDING_MACHINE:
       return Object.assign({}, state, { machines: [...machines.slice(0, action.machineIndex), ...machines.slice(action.machineIndex + 1)] });
